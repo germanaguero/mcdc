@@ -1,0 +1,31 @@
+#Activar RewriteEngine
+RewriteEngine On
+
+RewriteBase /mcdc
+DirectoryIndex index.php
+
+#prohibir la navegacion de los directorios
+Options All -Indexes
+
+#AddType application/octet-stream .mp3
+#AddType application/octet-stream .ogv
+#AddType application/octet-stream .mp4
+
+#Protect the .ogv File
+
+# Experimento Refactoring
+
+################################################
+############# movie section
+################################################
+#   Entrada:  detail/NOMBRE/
+#   Salida: detail.php?id=NOMBRE
+#RewriteRule ^detail/(\d+)/?$ detail.php?id=$1
+
+#   Entrada:  online/NOMBRE/
+#   Salida: online.php?id=NOMBRE
+#RewriteRule ^online/(\d+)/?$ online.php?id=$1
+
+################################################
+############# music section
+################################################

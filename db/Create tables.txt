@@ -1,0 +1,59 @@
+DROP DATABASE `mcdc`;
+
+CREATE DATABASE `mcdc` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+
+CREATE TABLE `mcdc`.`movies` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`title` VARCHAR( 255 ) NOT NULL ,
+`description` TEXT NOT NULL ,
+`rating` VARCHAR( 3 ) NOT NULL ,
+`clasificacion` VARCHAR( 3 ) NOT NULL ,
+`duracion` VARCHAR( 3 ) NOT NULL ,
+`img` VARCHAR( 255 ) NOT NULL ,
+`ogg` VARCHAR( 255 ) NOT NULL ,
+`mp4` VARCHAR( 255 ) NOT NULL ,
+`estreno_recomendado` BOOLEAN NOT NULL ,
+`fecha` DATE NOT NULL ,
+`active` BOOLEAN NOT NULL ,
+UNIQUE (
+`id`
+)
+) ENGINE = InnoDB;
+
+CREATE TABLE `mcdc`.`music` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`album` VARCHAR( 255 ) NOT NULL ,
+`img_1` VARCHAR( 255 ) NOT NULL ,
+`img_2` VARCHAR( 255 ) NOT NULL ,
+`ogg` VARCHAR( 255 ) NOT NULL ,
+`mp3` VARCHAR( 255 ) NOT NULL ,
+`estreno_recomendado` BOOLEAN NOT NULL ,
+`fecha` DATE NOT NULL ,
+`active` BOOLEAN NOT NULL ,
+UNIQUE (
+`id`
+)
+) ENGINE = InnoDB;
+
+
+
+INSERT INTO `mcdc`.`movies` (`id`, `title`, `description`, `rating`, `clasificacion`, `duracion`, `img`, `ogg`, `mp4`, `estreno_recomendado`, `fecha`, `active`) VALUES ('', 'movie 1', 'description movie 1', '6.3', 'pg', '', '1freeloaders.jpg', 'Shreks.ogg', 'Shreks.mp4', true, NOW(), true);
+INSERT INTO `mcdc`.`movies` (`id`, `title`, `description`, `rating`, `clasificacion`, `duracion`, `img`, `ogg`, `mp4`, `estreno_recomendado`, `fecha`, `active`) VALUES ('', 'movie 2', 'description movie 2', '2.3', 'pg', '', '1prometheus.jpg', 'Shreks.ogg', 'Shreks.mp4', true, NOW(), true);
+INSERT INTO `mcdc`.`movies` (`id`, `title`, `description`, `rating`, `clasificacion`, `duracion`, `img`, `ogg`, `mp4`, `estreno_recomendado`, `fecha`, `active`) VALUES ('', 'movie 3', 'description movie 3', '1.3', 'pg', '', '1recreator.jpg', 'Shreks.ogg', 'Shreks.mp4', true, NOW(), true);
+
+INSERT INTO `mcdc`.`music` (
+`id` ,
+`album` ,
+`img_1` ,
+`img_2` ,
+`ogg` ,
+`mp3` ,
+`estreno_recomendado` ,
+`fecha` ,
+`active`
+)
+VALUES (
+NULL , 'VA - Bacon Party vol.1 (By Dj Bacon)', 'VA - Bacon Party vol.1 (By Dj Bacon)', '', 'VA - Bacon Party vol.1 (By Dj Bacon).ogg', 'VA - Bacon Party vol.1 (By Dj Bacon).mp3', '1', NOW(), 1
+), (
+NULL , 'VA - Bacon Party vol.1 (By Dj Bacon)', 'VA - Bacon Party vol.1 (By Dj Bacon).jpg', '', 'VA - Bacon Party vol.1 (By Dj Bacon).ogg', 'VA - Bacon Party vol.1 (By Dj Bacon).mp3', '1', NOW(), 1
+);
