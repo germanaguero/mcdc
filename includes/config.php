@@ -96,6 +96,20 @@ switch ($server_request){
 		define("DOWNLOAD_LINK", true);
 		define("MODE_HREF_JAVASCRIPT", false);
    break;
+    
+	default;
+        define("BASE_PATH", "http://".$server_request."/");
+        define("IMAGE_PATH","images/");
+        define("IMAGE_PATH_DETAIL","images/detail/");
+        define("IMAGE_PATH_ICO", "images/ico/");
+        define("DIR_MOVIE", "movie/");
+        define("DIR_MUSIC", "music/");
+        define("DIR_JS", "js/");
+        define("DIR_CSS", "css/");
+        define("DIR_INCLUDES", "includes/");
+		define("DOWNLOAD_LINK", true);
+		define("MODE_HREF_JAVASCRIPT", false);
+    break;
 
 }
 
