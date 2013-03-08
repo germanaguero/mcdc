@@ -1,7 +1,7 @@
 #Activar RewriteEngine
 RewriteEngine On
 
-RewriteBase /mcdc
+#RewriteBase /mcdc
 DirectoryIndex index.php
 
 #prohibir la navegacion de los directorios
@@ -18,14 +18,12 @@ Options All -Indexes
 ################################################
 ############# movie section
 ################################################
-#   Entrada:  detail/NOMBRE/
-#   Salida: detail.php?id=NOMBRE
-#RewriteRule ^detail/(\d+)/?$ detail.php?id=$1
+RewriteRule ^detail/(\d+)/?$ detail.php?id=$1
+RewriteRule ^online/(\d+)/?$ online.php?id=$1
+RewriteRule ^getfile/(\d+)/?$ get_file.php?id=$1
+RewriteRule ^moremovie/?$ more_movie.php
+RewriteRule ^moremusic/?$ more_music.php
+RewriteRule ^index/?$ index.php
 
-#   Entrada:  online/NOMBRE/
-#   Salida: online.php?id=NOMBRE
-#RewriteRule ^online/(\d+)/?$ online.php?id=$1
 
-################################################
-############# music section
-################################################
+RewriteRule ^music/(\d+)/?$ music.php?id=$1

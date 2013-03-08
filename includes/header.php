@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<a href="<?php echo BASE_PATH; ?>index.php"><img src ="<?php echo IMAGE_PATH_ICO; ?>logo_short2.png" alt="logo" title="logo"></a>
+<a href="<?php echo BASE_PATH; ?>"><img src ="<?php echo IMAGE_PATH_ICO; ?>logo_short2.png" alt="logo" title="logo"></a>
 
 <?php
 if($server_request == "90.0.4.143"){

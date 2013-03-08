@@ -19,7 +19,8 @@ $movie_html_detail = "";
 		else if( $browser_codec == "theora" ){
 			$movie_html_detail .= "<source src=\"".DIR_MOVIE.$movie["ogg"]."\" type=\"video/ogg\">";
 		}
-		$download_link = "get_file.php?id=".$movie["id"];
+		//$download_link = "get_file.php?id=".$movie["id"];
+		$download_link = "getfile/".$movie["id"];
 	}
 }
 else{
@@ -48,7 +49,7 @@ else{
 <?php
 	if(DOWNLOAD_LINK){
 		echo "<div id=\"download_container\">
-		<a href=\"".$download_link."\" id=\"download_img_1\"><img src=\"".IMAGE_PATH_ICO."download_64x64.png\" alt=\"download_ico\" /></a>
+		<a href=\"/".$download_link."\" id=\"download_img_1\"><img src=\"".IMAGE_PATH_ICO."download_64x64.png\" alt=\"download_ico\" /></a>
 		</div>";
 	}
 ?>
