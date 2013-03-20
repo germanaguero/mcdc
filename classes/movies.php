@@ -110,6 +110,36 @@ class Movies
 	}
 	
 	
+	public function searchMovies($title){
+	//SELECT * FROM `movies` WHERE title REGEXP 'resident|2012|evil'
+
+		if( !is_null($title) && strlen(trim($title)) > 0 ){
+	
+			$normal_movie = $this->sM($title);
+
+			if($normal_movie){
+				return $normal_movie;
+			}
+		
+		}
+		return false;
+
+	}
+	
+	private function sM($title){
+		$this->_query = "Select * from movies where title like'%".$title."%'";
+		$this->_result = $this->_mysql->query($this->_query);
+
+		//echo '<pre>'.print_r($this->_result, true).'</pre>';
+		
+		if( count($this->_result) > 0 ){
+			return $this->_result;
+		}
+		else{
+			return false;
+		}
+		
+	}
 	
 	
 	

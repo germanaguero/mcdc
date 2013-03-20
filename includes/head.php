@@ -17,6 +17,7 @@ include_once dirname(__FILE__). '\config.php';
 
 <script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="/js/jMyCarousel.js"></script>
+<script type="text/javascript" src="/js/ajax.js"></script>
 <script type="text/javascript" src="/js/jQuery.jPlayer.2.2.0/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="/js/jQuery.jPlayer.2.2.0/jplayer.playlist.min.js"></script>
 <!--<script type="text/javascript" src="js/jquery-1.2.1.pack.js"></script>-->

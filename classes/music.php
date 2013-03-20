@@ -109,6 +109,32 @@ class Music
 		
 	}
 	
+	public function searchAlbums($album){
+		if( !is_null($album) && strlen(trim($album)) > 0 ){
+			$normal_music = $this->sA($album);
+
+			if($normal_music){
+				return $normal_music;
+			}
+		}
+		return false;
+
+	}
+	
+	private function sA($album){
+		$this->_query = "Select * from music where album like'%".$album."%'";
+		$this->_result = $this->_mysql->query($this->_query);
+		//echo '<pre>'.print_r($this->_result, true).'</pre>';
+		
+		if( count($this->_result) > 0 ){
+			return $this->_result;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
 	
 	
 	
