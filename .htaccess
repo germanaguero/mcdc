@@ -19,7 +19,9 @@ Options All -Indexes
 ############# movie section
 ################################################
 RewriteRule ^detail/(\d+)/?$ detail.php?id=$1
+RewriteRule ^detail/ajax.php/?$ ajax.php
 RewriteRule ^online/(\d+)/?$ online.php?id=$1
+RewriteRule ^online/ajax.php/?$ ajax.php
 RewriteRule ^getfile/(\d+)/?$ get_file.php?id=$1
 RewriteRule ^moremovie/?$ more_movie.php
 RewriteRule ^moremusic/?$ more_music.php

@@ -127,23 +127,49 @@ class Movies
 	}
 	
 	private function sM($title){
-		$this->_query = "Select * from movies where title like'%".$title."%'";
-		$this->_result = $this->_mysql->query($this->_query);
 
-		//echo '<pre>'.print_r($this->_result, true).'</pre>';
-		
-		if( count($this->_result) > 0 ){
-			return $this->_result;
+		//SELECT * FROM `movies` WHERE title REGEXP 'resident|2012|evil'
+		//$this->_query = "Select * from movies where title like'%".$title."%'";
+
+		$words = explode(" ", $title);
+
+		if( count($words) > 0 ){
+
+			
+
+			if( count($words) == 1 ){
+				$this->_query = "Select * from movies where title like'%".$words[0]."%'";
+
+			}
+			else if(count($words) > 1){
+
+				$this->_query = "Select * from movies where title REGEXP '";
+
+				for($i=0; $i < count($words); $i++){
+
+					if($i == count($words)-1 ){
+						$this->_query = $this->_query . $words[$i] . "'";
+					}
+					else{
+						$this->_query = $this->_query . $words[$i] . "|";
+					}
+
+				}
+
+			}
+
+			$this->_result = $this->_mysql->query($this->_query);
+
+			//echo '<pre>'.print_r($this->_result, true).'</pre>';
+			
+				if( count($this->_result) > 0 ){
+					return $this->_result;
+				}
 		}
-		else{
-			return false;
-		}
+
+		return false;
 		
 	}
-	
-	
-	
-	
 
 }
 ?>

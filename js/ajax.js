@@ -14,6 +14,7 @@ function clearSearchBoxInput(){
 function search(){
 	var search_text;
 	search_text = document.getElementById('searchBoxInput').value;
+	
 	//queryRequestGet(search_text);
 	queryRequestPost(search_text);
 }
@@ -47,7 +48,7 @@ function handleResponse(response)
 		document.getElementById('response_ajax').innerHTML = "no hay resultados para la busqueda";
 	}
 	else{
-		window.location="more_movies.php";
+		window.location="../result.php";
 	}
 }
 
