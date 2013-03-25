@@ -6,7 +6,29 @@ $server_addr = $_SERVER['SERVER_ADDR'];
 
 //browser detect
 $user_agent = $_SERVER['HTTP_USER_AGENT'] . "\n\n";
-if (preg_match('/MSIE/i', $user_agent)) { 
+
+if(strstr($user_agent,'MSIE')){
+    $browser_codec = "h.264";
+}
+else if(strstr($user_agent,'Firefox')){
+    $browser_codec = "theora";
+}
+else if(strstr($user_agent,'Chrome')){
+    $browser_codec = "theora";
+}
+else if(strstr($user_agent,'Safari')){
+    $browser_codec = "h.264";
+}
+else if(strstr($user_agent,'Opera')){
+    $browser_codec = "theora";
+}
+
+if(strstr($user_agent,'Android')){
+    $browser_codec = "theora";
+}
+
+
+/*if (preg_match('/MSIE/i', $user_agent)) { 
 	$browser_codec = "h.264";   
 }else if(preg_match('/Firefox/i', $user_agent)){
 	$browser_codec = "theora";
@@ -17,8 +39,10 @@ if (preg_match('/MSIE/i', $user_agent)) {
 }else if(preg_match('/Opera/i', $user_agent)){
 	$browser_codec = "theora";
 }else if(preg_match('/Android/i', $user_agent)){
-	$browser_codec = "h.264";
-}
+	//$browser_codec = "h.264";
+    $browser_codec = "theora";
+}*/
+
 
 switch ($server_request){
 

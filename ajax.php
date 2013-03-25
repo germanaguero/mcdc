@@ -14,7 +14,7 @@ $movie = new Movies();
 $music = new Music();
 
 if( $movie->searchMovies($title) || $music->searchAlbums($title) ){
-	echo "1";
+	echo $title;
 }
 else{
 	echo "0";

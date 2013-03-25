@@ -122,7 +122,7 @@ class Music
 	}
 	
 	private function sA($album){
-		$this->_query = "Select * from music where album like'%".$album."%'";
+		$this->_query = "Select * from music where album like'%".$album."%' and active = 1";
 		$this->_result = $this->_mysql->query($this->_query);
 		//echo '<pre>'.print_r($this->_result, true).'</pre>';
 		

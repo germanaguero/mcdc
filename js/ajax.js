@@ -48,7 +48,7 @@ function handleResponse(response)
 		document.getElementById('response_ajax').innerHTML = "no hay resultados para la busqueda";
 	}
 	else{
-		window.location="../result.php";
+		window.location="../result/"+response;
 	}
 }
 
