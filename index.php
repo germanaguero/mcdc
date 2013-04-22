@@ -9,8 +9,9 @@ require_once("includes/head.php");
 </header> 
 
 
-<section> 
-<article>
+<section>
+<!--<article>-->
+<div id="movies">
 <?php 
 if( $movies_list ){
 
@@ -46,7 +47,10 @@ else{
 
 echo $movies_html_list;
 ?>
-<br />
+</div>
+</section> 
+<section> 
+<div id="music">
 <?php 
 if( $music_list ){
 
@@ -72,7 +76,8 @@ else{
 
 echo $music_html_list;
 ?>
-</article>
+<!--</article>-->
+</div>
 </section> 
 
 <footer>

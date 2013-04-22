@@ -135,8 +135,6 @@ class Movies
 
 		if( count($words) > 0 ){
 
-			
-
 			if( count($words) == 1 ){
 				$this->_query = "Select * from movies where title like'%".$words[0]."%' and active = 1";
 

@@ -40,10 +40,6 @@ function queryRequestGet(search_text){
 
 function handleResponse(response)
 {
-
-	console.log(response);
-
-  
 	if(response == 0){
 		document.getElementById('response_ajax').innerHTML = "no hay resultados para la busqueda";
 	}
@@ -53,6 +49,7 @@ function handleResponse(response)
 }
 
 function queryRequestPost(search_text){
+
 	var http_request = createObjectAjax();
 	
 	http_request.onreadystatechange = function(){

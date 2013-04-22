@@ -122,24 +122,45 @@ class Music
 	}
 	
 	private function sA($album){
-		$this->_query = "Select * from music where album like'%".$album."%' and active = 1";
-		$this->_result = $this->_mysql->query($this->_query);
+		//$this->_query = "Select * from music where album like'%".$album."%' and active = 1";
+		//$this->_result = $this->_mysql->query($this->_query);
 		//echo '<pre>'.print_r($this->_result, true).'</pre>';
-		
-		if( count($this->_result) > 0 ){
-			return $this->_result;
-		}
-		else{
-			return false;
-		}
-		
-	}
-	
-	
-	
-	
-	
-	
 
+		$words = explode(" ", $album);
+
+		if( count($words) > 0 ){
+
+			if( count($words) == 1 ){
+				$this->_query = "Select * from music where album like'%".$words[0]."%' and active = 1";
+
+			}
+			else if(count($words) > 1){
+
+				$this->_query = "Select * from music where album REGEXP '";
+
+				for($i=0; $i < count($words); $i++){
+
+					if($i == count($words)-1 ){
+						$this->_query = $this->_query . $words[$i] . "'";
+					}
+					else{
+						$this->_query = $this->_query . $words[$i] . "|";
+					}
+
+				}
+
+			}
+
+			$this->_result = $this->_mysql->query($this->_query);
+
+			//echo '<pre>'.print_r($this->_result, true).'</pre>';
+			
+				if( count($this->_result) > 0 ){
+					return $this->_result;
+				}
+		}
+
+		return false;		
+	}
 }
 ?>

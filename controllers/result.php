@@ -13,12 +13,12 @@ $album_list = $albums->searchAlbums($title);
 $movies = new Movies();
 $movies_list = $movies->searchMovies($title);
 
-
+/*
 $result_list = array();
 $result_list = $array_marge = array($movies_list, $album_list);
+*/
 
 
-
-
-print_r($result_list);
+//echo '<pre>'.print_r($movies_list, true).'</pre>';
+//echo '<pre>'.print_r($album_list, true).'</pre>';
 ?>

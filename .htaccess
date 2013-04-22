@@ -23,6 +23,8 @@ RewriteRule ^detail/ajax.php/?$ ajax.php
 
 RewriteRule ^online/(\d+)/?$ online.php?id=$1
 RewriteRule ^online/ajax.php/?$ ajax.php
+RewriteRule ^result/ajax.php/?$ ajax.php
+
 RewriteRule ^result/([\s\S]+)/?$ result.php?title=$1
 RewriteRule ^getfile/(\d+)/?$ get_file.php?id=$1
 RewriteRule ^moremovie/?$ more_movie.php

@@ -24,7 +24,7 @@ else if(strstr($user_agent,'Opera')){
 }
 
 if(strstr($user_agent,'Android')){
-    $browser_codec = "theora";
+    $browser_codec = "h.264";
 }
 
 
