@@ -111,8 +111,22 @@ div.table_right{float:left; padding-left: 100px; padding-top:10px; }
 
 <section>
 	<div class="more_result_list">
-		<?php echo $html_movie; ?>
-		<?php echo $html_music; ?>
+		<?php 
+		if( isset( $html_movie ) && strlen($html_movie) > 1 ){	
+			echo $html_movie; 
+		}
+		?>
+		
+
+		<?php 
+		
+		if( isset( $html_music ) && strlen($html_music) > 1 ){	
+			echo $html_music; 
+		}
+		?>
+
+
+
 	</div>
 </section>
 
