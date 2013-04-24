@@ -2,6 +2,7 @@
 require_once("controllers/".basename($_SERVER['PHP_SELF']));
 require_once("includes/head.php");
 ?>
+
 <body>
 
 <header>
@@ -12,6 +13,9 @@ require_once("includes/head.php");
 <section>
 <!--<article>-->
 <div id="movies">
+	<div id="movies_title">
+		<p>Movies</p>
+	</div>
 <?php 
 if( $movies_list ){
 
@@ -51,6 +55,9 @@ echo $movies_html_list;
 </section> 
 <section> 
 <div id="music">
+	<div id="music_title">
+		<p>Music</p>
+	</div>
 <?php 
 if( $music_list ){
 
@@ -93,6 +100,11 @@ $(document).ready(function() {
 	$(".jMyCarousel_music").jMyCarousel({
 		visible: '100%'
 	});
+
+	$(".jMyCarousel").css("width","97%");
+	$(".jMyCarousel_music").css("width","97%");
+	$(".jMyCarousel_music").css("height","226px");
+
 });
 </script>
 
